@@ -51,7 +51,6 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
   <input id="name" maxlength="30">
   <button class="btn" id="go"></button>
   <button class="lnk" id="adm">⚙ Admin</button>
-  <p style="text-align:center;margin:14px 0 0"><a href="#" id="aOpen" style="color:var(--mut);font-size:.85rem">Admin</a></p>
 </div>
 
 <!-- Page 2: quiz -->
@@ -88,22 +87,6 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
   <div class="row"><button class="btn" id="asave">Save</button><button class="btn alt" id="aexit">Exit (Esc)</button></div>
 </div>
 
-<!-- Admin page -->
-<div class="card hide" id="pAdmin">
-  <h3 style="margin-top:0">Admin</h3>
-  <div id="aLogin"><input id="apw" type="password" placeholder="Password"><button class="btn" id="aGo">Login</button></div>
-  <div id="aPanel" class="hide">
-    <div class="langs" id="aLangs"></div>
-    <label>Seconds per question <input id="asec" type="number" min="10" max="180"></label>
-    <div id="aList"></div>
-    <h4>Add / edit question</h4>
-    <input id="aq" placeholder="Question"><input id="a0" placeholder="Correct answer"><input id="a1" placeholder="Wrong answer 1"><input id="a2" placeholder="Wrong answer 2"><input id="a3" placeholder="Wrong answer 3">
-    <button class="btn" id="aAdd">Add question</button>
-    <button class="btn" id="aSave" style="margin-top:10px;background:var(--ok)">Save changes</button>
-  </div>
-  <p class="msg" id="amsg"></p>
-  <button class="btn" id="aBack" style="margin-top:6px;background:var(--mut)">Back</button>
-</div>
 </div>
 
 <script>
@@ -191,18 +174,19 @@ let NUM=30,SEC=45;
 function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function shuffle(arr,r){arr=arr.slice();for(let k=arr.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[arr[k],arr[j]]=[arr[j],arr[k]]}return arr}
-function show(id){["pStart","pQuiz","pRes","pAdmin"].forEach(p=>$(p).classList.toggle("hide",p!==id))}
+const esc=v=>String(v).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+function show(id){["pStart","pQuiz","pRes","pLogin","pAdmin"].forEach(p=>$(p).classList.toggle("hide",p!==id))}
 
 function setLang(l){
   L=l;const t=T[l];
   document.documentElement.lang=l;document.documentElement.dir=t.dir;
   document.body.classList.toggle("rtl",t.dir==="rtl");
-  $("sub").textContent=t.sub;$("name").placeholder=t.ph;$("go").textContent=t.go;$("again").textContent=t.again;
+  $("sub").textContent=t.sub.replace("45",SEC);$("name").placeholder=t.ph;$("go").textContent=t.go;$("again").textContent=t.again;
   $("langs").innerHTML="";
   Object.keys(T).forEach(k=>{const b=document.createElement("button");b.textContent=T[k].n;b.className=k===l?"on":"";b.onclick=()=>setLang(k);$("langs").appendChild(b)});
 }
 
-async function start(){await loadQ();
+function start(){
   const d=new Date(),day=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
   const name=$("name").value.trim().toLowerCase();
   const r=rng(hash(day+"|"+name+"|"+L));   // changes every day and per user
@@ -235,21 +219,18 @@ function finish(){
   const t=T[L];show("pRes");
   $("rt").textContent=t.res;$("sc").textContent=score+" / "+list.length;
   $("rm").textContent=t.tip[score>=list.length?2:score>=list.length/2?1:0]+" "+t.come;
-  $("rev").innerHTML=log.map((x,n)=>`<div class="rev" dir="${T[x.k].dir}"><b>${n+1}. ${x.q}</b>
-    <span class="${x.u===x.a?"g":"r"}">${t.your}: ${x.u??t.none}</span><br>
-    ${x.u===x.a?"":`<span class="g">${t.ok}: ${x.a}</span>`}</div>`).join("");
+  $("rev").innerHTML=log.map((x,n)=>`<div class="rev" dir="${T[x.k].dir}"><b>${n+1}. ${esc(x.q)}</b>
+    <span class="${x.u===x.a?"g":"r"}">${t.your}: ${esc(x.u??t.none)}</span><br>
+    ${x.u===x.a?"":`<span class="g">${t.ok}: ${esc(x.a)}</span>`}</div>`).join("");
   window.scrollTo(0,0);saveScore();
 }
 
 
-let DB=null;
-const DBP=(async()=>{try{DB=await claude.use("db")}catch(e){DB=null}if(DB)loadShared()})();
 const dayKey=()=>{const d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()};
-async function saveScore(){
+function saveScore(){
   const t=T[L],row={name:$("name").value.trim().slice(0,30)||t.guest,score,total:list.length,mode:L,day:dayKey(),t:Date.now()};
   let rows=null;
   $("lbt").textContent="🏆 "+t.lb+" · "+t.n;$("lb").textContent="…";
-  try{ if(DB){await DB.collection("scores").add(row);const sn=await DB.collection("scores").where("day","==",row.day).limit(300).get();rows=sn.docs.map(d=>d.data()).filter(r=>r.mode===L)} }catch(e){rows=null}
   if(!rows){try{const k="ql_"+row.day;const a=JSON.parse(localStorage.getItem(k)||"[]");a.push(row);localStorage.setItem(k,JSON.stringify(a));rows=a.filter(r=>r.mode===L)}catch(e){rows=[row]}}
   rows.sort((a,b)=>b.score-a.score||a.t-b.t);
   const box=$("lb");box.textContent="";
@@ -257,48 +238,10 @@ async function saveScore(){
     [n+1,r.name+(d.className.includes("me")?" ("+t.you+")":""),r.score+"/"+r.total].forEach(x=>{const sp=document.createElement("span");sp.textContent=x;d.appendChild(sp)});box.appendChild(d)});
 }
 
-let aL="en",editIdx=-1;
-async function loadQ(){
-  await DBP;let d=null;
-  try{if(DB){d=(await DB.doc("config/questions").get()).data()||null}}catch(e){}
-  if(!d){try{d=JSON.parse(localStorage.getItem("ql_cfg")||"null")}catch(e){}}
-  if(d){try{const q=JSON.parse(d.q);if(q.en&&q.ur&&q.ar)Q=q;if(d.sec)SEC=+d.sec}catch(e){}}
-}
-function aRender(){
-  $("aLangs").innerHTML="";
-  ["en","ur","ar"].forEach(k=>{const b=document.createElement("button");b.textContent=T[k].n;b.className=k===aL?"on":"";b.onclick=()=>{aL=k;editIdx=-1;aRender()};$("aLangs").appendChild(b)});
-  const box=$("aList");box.textContent="";
-  Q[aL].forEach((q,n)=>{const d=document.createElement("div");d.className="rev";d.dir=T[aL].dir;
-    const t=document.createElement("b");t.textContent=(n+1)+". "+q[0];d.appendChild(t);
-    const a=document.createElement("small");a.textContent="✔ "+q[1]+"   ✘ "+q.slice(2).join(" | ");d.appendChild(a);d.appendChild(document.createElement("br"));
-    [["Edit",()=>{editIdx=n;["aq","a0","a1","a2","a3"].forEach((id,j)=>$(id).value=q[j]||"");$("aAdd").textContent="Update question"}],["Delete",()=>{if(confirm("Delete this question?")){Q[aL].splice(n,1);aRender()}}]].forEach(([l,f])=>{const b=document.createElement("button");b.textContent=l;b.onclick=f;b.style.cssText="margin:6px 6px 0 0;padding:4px 12px";d.appendChild(b)});
-    box.appendChild(d)});
-}
-$("aOpen").onclick=e=>{e.preventDefault();$("amsg").textContent="";show("pAdmin")};
-$("aBack").onclick=()=>{$("aLogin").classList.remove("hide");$("aPanel").classList.add("hide");$("apw").value="";show("pStart")};
-$("aGo").onclick=async()=>{
-  if($("apw").value!=="3647"){$("amsg").textContent="Wrong password.";return}
-  $("amsg").textContent="…";await loadQ();$("amsg").textContent="";
-  $("aLogin").classList.add("hide");$("aPanel").classList.remove("hide");$("asec").value=SEC;aRender();
-};
-$("aAdd").onclick=()=>{
-  const v=["aq","a0","a1","a2","a3"].map(id=>$(id).value.trim());
-  if(v.some(x=>!x)){$("amsg").textContent="Please fill all 5 fields.";return}
-  if(editIdx>=0)Q[aL][editIdx]=v;else Q[aL].push(v);
-  editIdx=-1;["aq","a0","a1","a2","a3"].forEach(id=>$(id).value="");$("aAdd").textContent="Add question";$("amsg").textContent="";aRender();
-};
-$("aSave").onclick=async()=>{
-  SEC=Math.min(180,Math.max(10,+$("asec").value||45));
-  const data={q:JSON.stringify(Q),sec:SEC};let msg;
-  try{if(!DB)throw 0;await DB.doc("config/questions").set(data);msg="Saved for everyone ✔"}
-  catch(e){try{localStorage.setItem("ql_cfg",JSON.stringify(data));msg="Saved on this device only (saving for everyone needs the page owner or an editor)."}catch(e2){msg="Could not save."}}
-  $("amsg").textContent=msg;
-};
 
 const AH=2352646237;let AL="en";
 function applyCfg(c){try{if(c.Q&&c.Q.en&&c.Q.ur&&c.Q.ar)Q=c.Q;if(c.SEC>=10)SEC=c.SEC}catch(e){}}
 try{const c=JSON.parse(localStorage.getItem("ql_cfg")||"null");if(c)applyCfg(c)}catch(e){}
-async function loadShared(){try{const sn=await DB.doc("config/quiz").get();const d=sn.data&&sn.data();if(d&&d.json)applyCfg(JSON.parse(d.json))}catch(e){}}
 function adminRender(){
   const box=$("aq");box.textContent="";
   Q[AL].forEach((q,n)=>{while(q.length<5)q.push("");
@@ -307,12 +250,11 @@ function adminRender(){
     const x=document.createElement("button");x.className="mini";x.textContent="🗑 Delete";x.onclick=()=>{Q[AL].splice(n,1);adminRender()};d.appendChild(x);box.appendChild(d)});
   $("asec").value=SEC;
 }
-async function saveCfg(){
+function saveCfg(){
   for(const k of Object.keys(Q))Q[k]=Q[k].map(q=>[(q[0]||"").trim(),(q[1]||"").trim(),...q.slice(2).map(v=>(v||"").trim()).filter(Boolean)]).filter(q=>q[0]&&q[1]&&q.length>=3);
   SEC=Math.min(300,Math.max(10,+$("asec").value||45));
   const c={Q,SEC};try{localStorage.setItem("ql_cfg",JSON.stringify(c))}catch(e){}
-  let ok=false;try{if(DB){await DB.doc("config/quiz").set({json:JSON.stringify(c)});ok=true}}catch(e){}
-  $("amsg").textContent=ok?"Saved for everyone ✔":"Saved on this device ✔ (shared save not available)";adminRender();
+  $("amsg").textContent="Saved on this device ✔";adminRender();setLang(L);
 }
 function leaveAdmin(){$("apw").value="";$("aerr").textContent="";show("pStart")}
 $("adm").onclick=()=>{show("pLogin");$("apw").focus()};
