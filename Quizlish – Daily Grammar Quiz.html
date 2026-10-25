@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quizlish – Daily Grammar Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--tx:#1b2433;--mut:#64708a;--pri:#3b5bdb;--ok:#2b9348;--bad:#d62839;--bd:#e1e6f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1b2030;--tx:#e8ecf5;--mut:#98a2bb;--pri:#7c93ff;--ok:#4cc26b;--bad:#ff6b7a;--bd:#2c3348}}
+:root[data-theme="dark"]{--bg:#12151d;--card:#1b2030;--tx:#e8ecf5;--mut:#98a2bb;--pri:#7c93ff;--ok:#4cc26b;--bad:#ff6b7a;--bd:#2c3348}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 8% 6%,rgba(255,184,48,.38),transparent 38%),radial-gradient(circle at 95% 12%,rgba(25,211,230,.34),transparent 40%),radial-gradient(circle at 50% 100%,rgba(232,62,140,.30),transparent 45%),radial-gradient(color-mix(in srgb,var(--tx) 16%,transparent) 1.3px,transparent 1.6px) 0 0/22px 22px,var(--bg);background-attachment:fixed;color:var(--tx);font-family:Inter,"Noto Naskh Arabic",system-ui,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:20px 14px}
+body.rtl{font-family:"Noto Naskh Arabic",Inter,serif;line-height:1.8}
+.wrap{width:100%;max-width:560px}
+.sr{position:absolute;left:-9999px}.logo{display:block;width:150px;height:150px;border-radius:30px;margin:0 auto 10px;box-shadow:0 10px 30px rgba(232,62,140,.35)}
+h1{margin:0 0 4px;font-size:1.9rem;color:var(--pri);text-align:center;letter-spacing:.5px}
+.sub{text-align:center;color:var(--mut);margin:0 0 20px}
+.card{background:color-mix(in srgb,var(--card) 93%,transparent);backdrop-filter:blur(6px);box-shadow:0 12px 32px rgba(20,30,70,.15);border:1px solid var(--bd);border-radius:16px;padding:22px}
+.langs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.langs button{flex:1 1 45%;padding:12px 6px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:12px;font-size:1.05rem;cursor:pointer;font-family:inherit}
+.langs button.on{border-color:var(--pri);background:var(--pri);color:#fff}
+input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:1rem;margin-bottom:14px;font-family:inherit}
+.btn{width:100%;padding:14px;border:0;border-radius:12px;background:var(--pri);color:#fff;font-size:1.05rem;font-weight:700;cursor:pointer;font-family:inherit}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;color:var(--mut)}
+.timer{font-weight:700;font-size:1.2rem;color:var(--tx)}.timer.low{color:var(--bad)}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;width:100%;background:var(--pri);transition:width 1s linear}
+.q{font-size:1.3rem;font-weight:600;margin:0 0 16px}
+.opt{display:block;width:100%;text-align:start;padding:13px 14px;margin-bottom:10px;border:2px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:12px;font-size:1.05rem;cursor:pointer;font-family:inherit}
+.opt:hover{border-color:var(--pri)}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,transparent)}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,transparent)}
+.score{text-align:center;font-size:3rem;font-weight:700;color:var(--pri);margin:6px 0}
+.msg{text-align:center;color:var(--mut);margin-bottom:16px}
+.rev{border-top:1px solid var(--bd);padding:12px 0}
+.rev b{display:block;margin-bottom:4px}
+.g{color:var(--ok)}.r{color:var(--bad)}
+.hide{display:none}.lnk{background:none;border:0;color:var(--mut);margin-top:12px;cursor:pointer;width:100%;font-family:inherit}.aqi{display:grid;gap:6px;border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px}.aqi input{margin:0}.mini{justify-self:end;border:0;background:var(--bg);color:var(--bad);border-radius:8px;padding:6px 10px;cursor:pointer}.row{display:flex;gap:8px;margin-top:10px}.row .btn{flex:1}.btn.alt{background:var(--mut)}.lbr{display:flex;gap:10px;padding:8px 10px;border-radius:10px}.lbr.me{background:color-mix(in srgb,var(--pri) 18%,transparent);font-weight:700}.lbr span:nth-child(2){flex:1}.lbr span:first-child{width:1.6em;color:var(--mut)}h3{margin:18px 0 6px;text-align:center}.rt{font-family:"Noto Naskh Arabic",serif;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+<img class="logo" alt="Quizlish" src="data:image/webp;base64,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"><h1 class="sr">Quizlish</h1>
+<p class="sub" id="sub"></p>
+
+<!-- Page 1: start -->
+<div class="card" id="pStart">
+  <div class="langs" id="langs"></div>
+  <input id="name" maxlength="30">
+  <button class="btn" id="go"></button>
+  <button class="lnk" id="adm">⚙ Admin</button>
+  <p style="text-align:center;margin:14px 0 0"><a href="#" id="aOpen" style="color:var(--mut);font-size:.85rem">Admin</a></p>
+</div>
+
+<!-- Page 2: quiz -->
+<div class="card hide" id="pQuiz">
+  <div class="top"><span id="cnt"></span><span class="timer" id="tm">30</span></div>
+  <div class="bar"><i id="fill"></i></div>
+  <p class="q" id="qt"></p>
+  <div id="opts"></div>
+</div>
+
+<!-- Page 3: result -->
+<div class="card hide" id="pRes">
+  <div class="msg" id="rt"></div>
+  <div class="score" id="sc"></div>
+  <div class="msg" id="rm"></div>
+  <div id="rev"></div>
+  <h3 id="lbt"></h3><div id="lb"></div>
+  <button class="btn" id="again" style="margin-top:14px"></button>
+</div>
+<div class="card hide" id="pLogin">
+  <h3 style="margin-top:0">🔒 Admin</h3>
+  <input id="apw" type="password" placeholder="Password" inputmode="numeric">
+  <div class="msg r" id="aerr"></div>
+  <div class="row"><button class="btn" id="alogin">Login</button><button class="btn alt" id="aback1">Exit (Esc)</button></div>
+</div>
+<div class="card hide" id="pAdmin">
+  <h3 style="margin-top:0">⚙ Admin · edit quiz</h3>
+  <select id="alang" style="width:100%;padding:10px;margin-bottom:10px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)"><option value="en">English</option><option value="ur">اردو</option><option value="ar">العربية</option></select>
+  <div id="aq"></div>
+  <button class="btn alt" id="aadd">＋ Add question</button>
+  <label style="display:block;margin:12px 0 4px;color:var(--mut)">Seconds per question</label>
+  <input id="asec" type="number" min="10" max="300">
+  <div class="msg" id="amsg"></div>
+  <div class="row"><button class="btn" id="asave">Save</button><button class="btn alt" id="aexit">Exit (Esc)</button></div>
+</div>
+
+<!-- Admin page -->
+<div class="card hide" id="pAdmin">
+  <h3 style="margin-top:0">Admin</h3>
+  <div id="aLogin"><input id="apw" type="password" placeholder="Password"><button class="btn" id="aGo">Login</button></div>
+  <div id="aPanel" class="hide">
+    <div class="langs" id="aLangs"></div>
+    <label>Seconds per question <input id="asec" type="number" min="10" max="180"></label>
+    <div id="aList"></div>
+    <h4>Add / edit question</h4>
+    <input id="aq" placeholder="Question"><input id="a0" placeholder="Correct answer"><input id="a1" placeholder="Wrong answer 1"><input id="a2" placeholder="Wrong answer 2"><input id="a3" placeholder="Wrong answer 3">
+    <button class="btn" id="aAdd">Add question</button>
+    <button class="btn" id="aSave" style="margin-top:10px;background:var(--ok)">Save changes</button>
+  </div>
+  <p class="msg" id="amsg"></p>
+  <button class="btn" id="aBack" style="margin-top:6px;background:var(--mut)">Back</button>
+</div>
+</div>
+
+<script>
+// Each question: [text, correct answer, wrong1, wrong2, wrong3]  (options are shuffled)
+let Q={
+en:[
+["Neither of the students ___ prepared for the exam.","was","were","are","be"],
+["If I ___ you, I would apologise.","were","was","am","be"],
+["She suggested that he ___ a doctor.","see","sees","saw","seeing"],
+["The report, along with the charts, ___ on my desk.","is","are","were","have been"],
+["By next year, she ___ here for a decade.","will have worked","will work","has worked","worked"],
+["Choose the correct spelling.","Accommodate","Accomodate","Acommodate","Acomodate"],
+["He insisted ___ paying the bill.","on","in","at","for"],
+["Hardly ___ the station when the train left.","had she reached","she had reached","did she reach","she reached"],
+["“Ubiquitous” means:","present everywhere","very rare","extremely rude","easily broken"],
+["Each of the players ___ a medal.","received","receive","have received","were receiving"]],
+ur:[
+["“احمد نے کتاب پڑھی۔” میں فاعل کون ہے؟","احمد","کتاب","پڑھی","نے"],
+["“آب و ہوا” میں “و” کیا ہے؟","حرفِ عطف","حرفِ جار","ضمیر","فعل"],
+["“خط” کی جمع کیا ہے؟","خطوط","خطات","خطیں","خطے"],
+["درست جملہ منتخب کریں۔","میں نے خط لکھا۔","میں خط لکھا۔","مجھ نے خط لکھا۔","میں نے خط لکھی۔"],
+["“آسمان سے باتیں کرنا” کا مطلب؟","بہت بلند ہونا","آسمان دیکھنا","خاموش رہنا","دعا کرنا"],
+["شرطیہ جملہ کون سا ہے؟","اگر محنت کرو گے تو کامیاب ہو گے۔","وہ کل لاہور گیا۔","دروازہ بند کرو۔","کیا تم آؤ گے؟"],
+["“علم” کی ضد کیا ہے؟","جہالت","عمل","حلم","فن"],
+["“وہ کتاب جو میں نے پڑھی” میں “جو” کیا ہے؟","ضمیرِ موصولہ","ضمیرِ اشارہ","حرفِ عطف","صفت"],
+["“سورج” کا مترادف کون سا ہے؟","آفتاب","ماہتاب","ستارہ","شعاع"],
+["“بولنا” کا ماضی استمراری کون سا ہے؟","بولتا تھا","بولا","بولے گا","بول رہا ہے"]],
+ar:[
+["إنَّ ___ مجتهدٌ.","الطالبَ","الطالبُ","الطالبِ","طالبٌ"],
+["إعراب «محمدٌ» في: جاء محمدٌ.","فاعل مرفوع","مفعول به منصوب","مبتدأ","مضاف إليه مجرور"],
+["كان الجوُّ ___.","جميلًا","جميلٌ","جميلِ","جميلون"],
+["المضارع المنصوب بعد «لن»:","لن يذهبَ","لن يذهبُ","لن يذهبْ","لن ذهبَ"],
+["جمع كلمة «قلم»","أقلام","قلمات","أقلمة","قلمون"],
+["«لا» في: لا تكذبْ هي:","ناهية جازمة","نافية","نافية للجنس","زائدة"],
+["الاسم الممنوع من الصرف:","أحمد","كتاب","معلم","طالب"],
+["«ما أجملَ السماءَ!» أسلوب:","تعجّب","استفهام","نفي","أمر"],
+["اسم الفاعل من «كتب»:","كاتب","مكتوب","كتابة","كُتُب"],
+["«الذي» اسم:","موصول","إشارة","استفهام","شرط"]]
+};
+const EASY={
+en:[
+["She ___ to school every day.","goes","go","going","gone"],
+["I have ___ apple.","an","a","the","some"],
+["They ___ playing football now.","are","is","am","was"],
+["___ going home. (They are)","They’re","Their","There","Theirs"],
+["He is taller ___ me.","than","then","that","as"],
+["Yesterday I ___ a movie.","watched","watch","watching","watches"],
+["Plural of “child”","children","childs","childrens","childes"],
+["___ you help me, please?","Can","Cans","Are","Does"],
+["If it rains, we ___ at home.","will stay","stayed","staying","have stay"],
+["She is the ___ girl in class.","smartest","smarter","most smarter","smart"]],
+ur:[
+["وہ لڑکا روز اسکول ___ ہے۔","جاتا","جاتی","جاتے","جاؤ"],
+["“لڑکی” کی جمع کیا ہے؟","لڑکیاں","لڑکیے","لڑکا","لڑکے"],
+["“اچھا” کی ضد کیا ہے؟","برا","بڑا","چھوٹا","میٹھا"],
+["ہم کل بازار ___۔","گئے","جاتے ہیں","جائیں گے","جاؤ"],
+["“قلم” کیا ہے؟","اسم","فعل","صفت","حرف"],
+["“دوڑنا” کیا ہے؟","فعل","اسم","صفت","ضمیر"],
+["“وہ” کون سی قسم ہے؟","ضمیر","فعل","صفت","حرف"],
+["“خوبصورت پھول” میں “خوبصورت” کیا ہے؟","صفت","اسم","فعل","حرفِ جار"],
+["لڑکیاں کھیل ___ ہیں۔","رہی","رہا","رہے","رہو"],
+["“دن” کی ضد کیا ہے؟","رات","صبح","شام","دوپہر"]],
+ar:[
+["الولد ___ إلى المدرسة.","يذهب","تذهب","ذهبوا","اذهبي"],
+["جمع كلمة «كتاب»","كتب","كتابون","كتابين","كتبات"],
+["ضد كلمة «كبير»","صغير","طويل","جميل","سريع"],
+["___ طالبة مجتهدة.","هي","هو","هم","أنتم"],
+["«كَتَبَ» فعل:","ماضٍ","مضارع","أمر","اسم"],
+["ذهبتُ ___ المدرسة.","إلى","ثم","لكن","و"],
+["مثنى كلمة «طالب»","طالبان","طالبون","طلاب","طالبات"],
+["«الشمس» تبدأ بحرف:","شمسي","قمري","ساكن","مشدّد"],
+["نحن ___ الدرس.","نكتب","يكتب","تكتبين","أكتب"],
+["ضد كلمة «نهار»","ليل","صباح","ظهر","مساء"]]
+};
+const T={
+en:{n:"English",dir:"ltr",sub:"Daily grammar quiz · 10 questions · 45 seconds each",ph:"Your name (optional)",go:"Start today’s quiz",q:"Question",res:"Your result",lb:"Leaderboard",guest:"Guest",you:"you",nolb:"No scores yet",again:"Back to start",tip:["Keep practising!","Good job!","Excellent!"],ok:"Correct answer",your:"Your answer",none:"No answer (time up)",come:"A new quiz arrives tomorrow."},
+ur:{n:"اردو",dir:"rtl",sub:"روزانہ گرامر کوئز · 10 سوالات · ہر سوال 45 سیکنڈ",ph:"آپ کا نام (اختیاری)",go:"آج کا کوئز شروع کریں",q:"سوال",res:"آپ کا نتیجہ",lb:"لیڈر بورڈ (آج)",guest:"مہمان",you:"آپ",nolb:"ابھی کوئی اسکور نہیں",again:"شروع میں واپس",tip:["مزید مشق کریں!","شاباش!","بہت خوب!"],ok:"درست جواب",your:"آپ کا جواب",none:"کوئی جواب نہیں (وقت ختم)",come:"کل نیا کوئز آئے گا۔"},
+ar:{n:"العربية",dir:"rtl",sub:"اختبار قواعد يومي · 10 أسئلة · 45 ثانية لكل سؤال",ph:"اسمك (اختياري)",go:"ابدأ اختبار اليوم",q:"السؤال",res:"نتيجتك",lb:"لوحة المتصدرين (اليوم)",guest:"ضيف",you:"أنت",nolb:"لا توجد نتائج بعد",again:"العودة للبداية",tip:["واصل التدرّب!","أحسنت!","ممتاز!"],ok:"الإجابة الصحيحة",your:"إجابتك",none:"بلا إجابة (انتهى الوقت)",come:"اختبار جديد غدًا."}
+};
+T.all={...T.en,n:"All languages · سب · الكل",sub:"Daily grammar quiz · 30 mixed questions (English, اردو, العربية) · 45 seconds each"};
+const $=id=>document.getElementById(id);
+let L="en",S,list,i,score,log,tick,left,locked;
+let NUM=30,SEC=45;
+
+function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shuffle(arr,r){arr=arr.slice();for(let k=arr.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[arr[k],arr[j]]=[arr[j],arr[k]]}return arr}
+function show(id){["pStart","pQuiz","pRes","pAdmin"].forEach(p=>$(p).classList.toggle("hide",p!==id))}
+
+function setLang(l){
+  L=l;const t=T[l];
+  document.documentElement.lang=l;document.documentElement.dir=t.dir;
+  document.body.classList.toggle("rtl",t.dir==="rtl");
+  $("sub").textContent=t.sub;$("name").placeholder=t.ph;$("go").textContent=t.go;$("again").textContent=t.again;
+  $("langs").innerHTML="";
+  Object.keys(T).forEach(k=>{const b=document.createElement("button");b.textContent=T[k].n;b.className=k===l?"on":"";b.onclick=()=>setLang(k);$("langs").appendChild(b)});
+}
+
+async function start(){await loadQ();
+  const d=new Date(),day=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+  const name=$("name").value.trim().toLowerCase();
+  const r=rng(hash(day+"|"+name+"|"+L));   // changes every day and per user
+  list=shuffle((L==="all"?Object.keys(Q):[L]).flatMap(k=>Q[k].map(q=>({k,q}))),r).slice(0,NUM).map(({k,q})=>({k,q:q[0],a:q[1],o:shuffle(q.slice(1),r)}));
+  i=0;score=0;log=[];show("pQuiz");next();
+}
+
+function next(){
+  if(i>=list.length)return finish();
+  const q=list[i];locked=false;left=SEC;
+  $("cnt").textContent=T[L].q+" "+(i+1)+" / "+list.length;
+  const rtl=T[q.k].dir==="rtl";$("qt").dir=$("opts").dir=T[q.k].dir;$("qt").className="q"+(rtl?" rt":"");$("opts").className=rtl?"rt":"";
+  $("qt").textContent=q.q;$("opts").innerHTML="";
+  q.o.forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o;b.onclick=()=>pick(o,b);$("opts").appendChild(b)});
+  const f=$("fill");f.style.transition="none";f.style.width="100%";void f.offsetWidth;f.style.transition="width 1s linear";
+  paint();clearInterval(tick);
+  tick=setInterval(()=>{left--;paint();if(left<=0)pick(null)},1000);
+}
+function paint(){$("tm").textContent=left+"s";$("tm").classList.toggle("low",left<=10);$("fill").style.width=(left/SEC*100)+"%"}
+
+function pick(o,btn){
+  if(locked)return;locked=true;clearInterval(tick);
+  const q=list[i];if(o===q.a)score++;
+  log.push({k:q.k,q:q.q,a:q.a,u:o});
+  [...$("opts").children].forEach(b=>{if(b.textContent===q.a)b.classList.add("ok");else if(b===btn)b.classList.add("bad")});
+  setTimeout(()=>{i++;next()},900);
+}
+
+function finish(){
+  const t=T[L];show("pRes");
+  $("rt").textContent=t.res;$("sc").textContent=score+" / "+list.length;
+  $("rm").textContent=t.tip[score>=list.length?2:score>=list.length/2?1:0]+" "+t.come;
+  $("rev").innerHTML=log.map((x,n)=>`<div class="rev" dir="${T[x.k].dir}"><b>${n+1}. ${x.q}</b>
+    <span class="${x.u===x.a?"g":"r"}">${t.your}: ${x.u??t.none}</span><br>
+    ${x.u===x.a?"":`<span class="g">${t.ok}: ${x.a}</span>`}</div>`).join("");
+  window.scrollTo(0,0);saveScore();
+}
+
+
+let DB=null;
+const DBP=(async()=>{try{DB=await claude.use("db")}catch(e){DB=null}if(DB)loadShared()})();
+const dayKey=()=>{const d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()};
+async function saveScore(){
+  const t=T[L],row={name:$("name").value.trim().slice(0,30)||t.guest,score,total:list.length,mode:L,day:dayKey(),t:Date.now()};
+  let rows=null;
+  $("lbt").textContent="🏆 "+t.lb+" · "+t.n;$("lb").textContent="…";
+  try{ if(DB){await DB.collection("scores").add(row);const sn=await DB.collection("scores").where("day","==",row.day).limit(300).get();rows=sn.docs.map(d=>d.data()).filter(r=>r.mode===L)} }catch(e){rows=null}
+  if(!rows){try{const k="ql_"+row.day;const a=JSON.parse(localStorage.getItem(k)||"[]");a.push(row);localStorage.setItem(k,JSON.stringify(a));rows=a.filter(r=>r.mode===L)}catch(e){rows=[row]}}
+  rows.sort((a,b)=>b.score-a.score||a.t-b.t);
+  const box=$("lb");box.textContent="";
+  rows.slice(0,10).forEach((r,n)=>{const d=document.createElement("div");d.className="lbr"+(r.t===row.t&&r.name===row.name?" me":"");
+    [n+1,r.name+(d.className.includes("me")?" ("+t.you+")":""),r.score+"/"+r.total].forEach(x=>{const sp=document.createElement("span");sp.textContent=x;d.appendChild(sp)});box.appendChild(d)});
+}
+
+let aL="en",editIdx=-1;
+async function loadQ(){
+  await DBP;let d=null;
+  try{if(DB){d=(await DB.doc("config/questions").get()).data()||null}}catch(e){}
+  if(!d){try{d=JSON.parse(localStorage.getItem("ql_cfg")||"null")}catch(e){}}
+  if(d){try{const q=JSON.parse(d.q);if(q.en&&q.ur&&q.ar)Q=q;if(d.sec)SEC=+d.sec}catch(e){}}
+}
+function aRender(){
+  $("aLangs").innerHTML="";
+  ["en","ur","ar"].forEach(k=>{const b=document.createElement("button");b.textContent=T[k].n;b.className=k===aL?"on":"";b.onclick=()=>{aL=k;editIdx=-1;aRender()};$("aLangs").appendChild(b)});
+  const box=$("aList");box.textContent="";
+  Q[aL].forEach((q,n)=>{const d=document.createElement("div");d.className="rev";d.dir=T[aL].dir;
+    const t=document.createElement("b");t.textContent=(n+1)+". "+q[0];d.appendChild(t);
+    const a=document.createElement("small");a.textContent="✔ "+q[1]+"   ✘ "+q.slice(2).join(" | ");d.appendChild(a);d.appendChild(document.createElement("br"));
+    [["Edit",()=>{editIdx=n;["aq","a0","a1","a2","a3"].forEach((id,j)=>$(id).value=q[j]||"");$("aAdd").textContent="Update question"}],["Delete",()=>{if(confirm("Delete this question?")){Q[aL].splice(n,1);aRender()}}]].forEach(([l,f])=>{const b=document.createElement("button");b.textContent=l;b.onclick=f;b.style.cssText="margin:6px 6px 0 0;padding:4px 12px";d.appendChild(b)});
+    box.appendChild(d)});
+}
+$("aOpen").onclick=e=>{e.preventDefault();$("amsg").textContent="";show("pAdmin")};
+$("aBack").onclick=()=>{$("aLogin").classList.remove("hide");$("aPanel").classList.add("hide");$("apw").value="";show("pStart")};
+$("aGo").onclick=async()=>{
+  if($("apw").value!=="3647"){$("amsg").textContent="Wrong password.";return}
+  $("amsg").textContent="…";await loadQ();$("amsg").textContent="";
+  $("aLogin").classList.add("hide");$("aPanel").classList.remove("hide");$("asec").value=SEC;aRender();
+};
+$("aAdd").onclick=()=>{
+  const v=["aq","a0","a1","a2","a3"].map(id=>$(id).value.trim());
+  if(v.some(x=>!x)){$("amsg").textContent="Please fill all 5 fields.";return}
+  if(editIdx>=0)Q[aL][editIdx]=v;else Q[aL].push(v);
+  editIdx=-1;["aq","a0","a1","a2","a3"].forEach(id=>$(id).value="");$("aAdd").textContent="Add question";$("amsg").textContent="";aRender();
+};
+$("aSave").onclick=async()=>{
+  SEC=Math.min(180,Math.max(10,+$("asec").value||45));
+  const data={q:JSON.stringify(Q),sec:SEC};let msg;
+  try{if(!DB)throw 0;await DB.doc("config/questions").set(data);msg="Saved for everyone ✔"}
+  catch(e){try{localStorage.setItem("ql_cfg",JSON.stringify(data));msg="Saved on this device only (saving for everyone needs the page owner or an editor)."}catch(e2){msg="Could not save."}}
+  $("amsg").textContent=msg;
+};
+
+const AH=2352646237;let AL="en";
+function applyCfg(c){try{if(c.Q&&c.Q.en&&c.Q.ur&&c.Q.ar)Q=c.Q;if(c.SEC>=10)SEC=c.SEC}catch(e){}}
+try{const c=JSON.parse(localStorage.getItem("ql_cfg")||"null");if(c)applyCfg(c)}catch(e){}
+async function loadShared(){try{const sn=await DB.doc("config/quiz").get();const d=sn.data&&sn.data();if(d&&d.json)applyCfg(JSON.parse(d.json))}catch(e){}}
+function adminRender(){
+  const box=$("aq");box.textContent="";
+  Q[AL].forEach((q,n)=>{while(q.length<5)q.push("");
+    const d=document.createElement("div");d.className="aqi";d.dir=T[AL].dir;
+    ["Question","Correct answer","Wrong answer 1","Wrong answer 2","Wrong answer 3"].forEach((ph,j)=>{const i=document.createElement("input");i.value=q[j];i.placeholder=ph;i.oninput=()=>{q[j]=i.value};d.appendChild(i)});
+    const x=document.createElement("button");x.className="mini";x.textContent="🗑 Delete";x.onclick=()=>{Q[AL].splice(n,1);adminRender()};d.appendChild(x);box.appendChild(d)});
+  $("asec").value=SEC;
+}
+async function saveCfg(){
+  for(const k of Object.keys(Q))Q[k]=Q[k].map(q=>[(q[0]||"").trim(),(q[1]||"").trim(),...q.slice(2).map(v=>(v||"").trim()).filter(Boolean)]).filter(q=>q[0]&&q[1]&&q.length>=3);
+  SEC=Math.min(300,Math.max(10,+$("asec").value||45));
+  const c={Q,SEC};try{localStorage.setItem("ql_cfg",JSON.stringify(c))}catch(e){}
+  let ok=false;try{if(DB){await DB.doc("config/quiz").set({json:JSON.stringify(c)});ok=true}}catch(e){}
+  $("amsg").textContent=ok?"Saved for everyone ✔":"Saved on this device ✔ (shared save not available)";adminRender();
+}
+function leaveAdmin(){$("apw").value="";$("aerr").textContent="";show("pStart")}
+$("adm").onclick=()=>{show("pLogin");$("apw").focus()};
+$("alogin").onclick=()=>{if(hash($("apw").value.trim())===AH){$("aerr").textContent="";$("amsg").textContent="";show("pAdmin");adminRender()}else $("aerr").textContent="Wrong password"};
+$("apw").onkeydown=e=>{if(e.key==="Enter")$("alogin").click()};
+$("alang").onchange=e=>{AL=e.target.value;adminRender()};
+$("aadd").onclick=()=>{Q[AL].push(["","","","",""]);adminRender()};
+$("asave").onclick=saveCfg;$("aexit").onclick=$("aback1").onclick=leaveAdmin;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&(!$("pLogin").classList.contains("hide")||!$("pAdmin").classList.contains("hide")))leaveAdmin()});
+$("go").onclick=start;
+$("again").onclick=()=>show("pStart");
+setLang("en");
+</script>
+</body>
+</html>
