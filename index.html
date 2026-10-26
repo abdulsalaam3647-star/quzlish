@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,7 +11,7 @@
 :root[data-theme="dark"]{--bg:#12151d;--card:#1b2030;--tx:#e8ecf5;--mut:#98a2bb;--pri:#7c93ff;--ok:#4cc26b;--bad:#ff6b7a;--bd:#2c3348}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at 8% 6%,rgba(255,184,48,.38),transparent 38%),radial-gradient(circle at 95% 12%,rgba(25,211,230,.34),transparent 40%),radial-gradient(circle at 50% 100%,rgba(232,62,140,.30),transparent 45%),radial-gradient(color-mix(in srgb,var(--tx) 16%,transparent) 1.3px,transparent 1.6px) 0 0/22px 22px,var(--bg);background-attachment:fixed;color:var(--tx);font-family:Inter,"Noto Naskh Arabic",system-ui,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:20px 14px}
+body{margin:0;background:radial-gradient(ellipse at 20% 15%,#2a1b6b 0,transparent 55%),radial-gradient(ellipse at 85% 80%,#0f4c75 0,transparent 55%),radial-gradient(ellipse at 60% 40%,#4b2a86 0,transparent 50%),#070a22;background-attachment:fixed;color:var(--tx);font-family:Inter,"Noto Naskh Arabic",system-ui,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:20px 14px}
 body.rtl{font-family:"Noto Naskh Arabic",Inter,serif;line-height:1.8}
 .wrap{width:100%;max-width:560px}
 .sr{position:absolute;left:-9999px}.logo{display:block;width:150px;height:150px;border-radius:30px;margin:0 auto 10px;box-shadow:0 10px 30px rgba(232,62,140,.35)}
@@ -37,7 +37,7 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
 .rev{border-top:1px solid var(--bd);padding:12px 0}
 .rev b{display:block;margin-bottom:4px}
 .g{color:var(--ok)}.r{color:var(--bad)}
-.hide{display:none}.arw{display:grid;grid-template-columns:1.1fr 1.6fr .7fr .9fr;gap:6px;font-size:.82rem;padding:6px 0;border-bottom:1px solid var(--bd)}.arw span{overflow-wrap:anywhere}.arw.h{font-weight:700;color:var(--mut)}#splash{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000;animation:fo .6s 2.7s forwards}#splash img{width:200px;height:200px;border-radius:40px;animation:pop 1.6s cubic-bezier(.2,1.3,.4,1) both,glow 1.2s 1.6s ease-in-out infinite alternate}#splash p{color:#fff;font:700 1.3rem Inter,sans-serif;letter-spacing:7px;margin-top:24px;animation:up 1s .9s both}@keyframes pop{0%{transform:scale(.1) rotate(-240deg);opacity:0}70%{transform:scale(1.12) rotate(8deg);opacity:1}100%{transform:none;opacity:1}}@keyframes glow{to{box-shadow:0 0 60px 10px rgba(25,211,230,.55),0 0 90px 20px rgba(232,62,140,.35)}}@keyframes up{from{opacity:0;transform:translateY(20px)}}@keyframes fo{to{opacity:0;visibility:hidden}}.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px}.menu .opt{margin:0;text-align:center;font-weight:600}table{border-collapse:collapse;margin:auto}td.c{width:var(--cs);height:var(--cs);border:1px solid var(--bd);padding:0;cursor:pointer;text-align:center;font-size:calc(var(--cs)*.6)}td.f{background:var(--pri)}td.x::after{content:"✕";color:var(--mut)}td.k{font-size:11px;color:var(--mut);text-align:center;vertical-align:bottom;padding:1px 3px;line-height:1.1}.r5{border-right-color:var(--mut)!important}.b5{border-bottom-color:var(--mut)!important}.sg{display:grid;margin:auto;width:max-content;touch-action:none;user-select:none;border:2px solid var(--tx)}.sc{height:var(--cs);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--cs)*.5)}.su{display:grid;grid-template-columns:repeat(9,1fr);margin:auto;max-width:400px;border:2px solid var(--tx)}.su div{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);font-size:1.2rem;cursor:pointer}.su .g{font-weight:700}.su .sel{background:color-mix(in srgb,var(--pri) 30%,transparent)}.su .bad{color:var(--bad)}.su div:nth-child(3n){border-right:2px solid var(--tx)}.su div:nth-child(9n){border-right:0}.su div:nth-child(n+19):nth-child(-n+27),.su div:nth-child(n+46):nth-child(-n+54){border-bottom:2px solid var(--tx)}.pad{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}.pad button{padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:1.1rem;cursor:pointer}.lnk{background:none;border:0;color:var(--mut);margin-top:12px;cursor:pointer;width:100%;font-family:inherit}.aqi{display:grid;gap:6px;border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px}.aqi input{margin:0}.mini{justify-self:end;border:0;background:var(--bg);color:var(--bad);border-radius:8px;padding:6px 10px;cursor:pointer}.row{display:flex;gap:8px;margin-top:10px}.row .btn{flex:1}.btn.alt{background:var(--mut)}.lbr{display:flex;gap:10px;padding:8px 10px;border-radius:10px}.lbr.me{background:color-mix(in srgb,var(--pri) 18%,transparent);font-weight:700}.lbr span:nth-child(2){flex:1}.lbr span:first-child{width:1.6em;color:var(--mut)}h3{margin:18px 0 6px;text-align:center}.rt{font-family:"Noto Naskh Arabic",serif;line-height:1.8}
+.hide{display:none}#float{position:fixed;inset:0;overflow:hidden;z-index:-1;pointer-events:none}#float i{position:absolute;opacity:.7;filter:blur(80px);width:45vmax!important;height:45vmax!important;will-change:transform;animation:fl 18s ease-in-out infinite}#float i:nth-child(1){width:240px;height:240px;left:4%;top:8%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd166,#ff8a00)}#float i:nth-child(2){width:180px;height:180px;right:6%;top:14%;border-radius:38%;background:linear-gradient(135deg,#19d3e6,#3b5bdb);animation-duration:22s}#float i:nth-child(3){width:260px;height:260px;left:60%;bottom:6%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff7eb6,#e83e8c);animation-duration:20s}#float i:nth-child(4){width:150px;height:150px;left:10%;bottom:10%;border-radius:30%;background:linear-gradient(135deg,#7bed9f,#1dd1a1);animation-duration:25s}#float i:nth-child(5){width:120px;height:120px;left:42%;top:42%;border-radius:50%;background:radial-gradient(circle at 30% 30%,#b794f4,#6c5ce7);animation-duration:17s}#float b{position:absolute;bottom:-80px;font:700 3rem serif;color:#fff;opacity:.35;animation:rise 16s linear infinite}#float b:nth-of-type(1){left:12%}#float b:nth-of-type(2){left:34%;animation-delay:4s;animation-duration:20s}#float b:nth-of-type(3){left:68%;animation-delay:8s}#float b:nth-of-type(4){left:88%;animation-delay:2s;animation-duration:22s}@keyframes fl{0%,100%{transform:translate(0,0) scale(1) rotate(0)}33%{transform:translate(40px,-60px) scale(1.15) rotate(40deg)}66%{transform:translate(-50px,40px) scale(.9) rotate(-30deg)}}@keyframes rise{to{transform:translateY(-115vh) rotate(25deg)}}@media(prefers-reduced-motion:reduce){#float *{animation:none!important}}.btn,.opt,.langs button,.lnk,.pad button,.mini{transition:transform .15s,box-shadow .15s,filter .15s,background .15s,border-color .15s,color .15s}.btn:hover{filter:brightness(1.15);transform:translateY(-2px);box-shadow:0 8px 22px color-mix(in srgb,var(--pri) 50%,transparent)}.btn.alt:hover{background:var(--pri)}.opt:not(.ok):not(.bad):hover{border-color:var(--pri);background:color-mix(in srgb,var(--pri) 18%,var(--bg));transform:translateX(4px);box-shadow:0 4px 14px color-mix(in srgb,var(--pri) 35%,transparent)}.menu .opt:not(.ok):not(.bad):hover{transform:translateY(-3px) scale(1.04)}.langs button:hover{border-color:var(--pri);transform:translateY(-2px);box-shadow:0 6px 16px color-mix(in srgb,var(--pri) 35%,transparent)}.lnk:hover{color:var(--pri);text-decoration:underline}.pad button:hover{background:var(--pri);color:#fff;transform:scale(1.06)}.mini:hover{background:var(--bad);color:#fff}td.c:hover,.sc:hover,.su div:hover{background:color-mix(in srgb,var(--pri) 30%,transparent)}:focus-visible{outline:3px solid var(--pri);outline-offset:2px}.qn{margin-bottom:14px}.qn label{display:block;margin-bottom:6px;color:var(--mut)}input[type=range]{padding:0;border:0;background:none;accent-color:var(--pri);margin-bottom:0}.lbr span:last-child{color:var(--mut);font-variant-numeric:tabular-nums}.arw{display:grid;grid-template-columns:1fr 1.4fr .7fr .6fr .9fr auto;gap:6px;font-size:.82rem;padding:6px 0;border-bottom:1px solid var(--bd)}.arw span{overflow-wrap:anywhere}.arw.h{font-weight:700;color:var(--mut)}#splash{position:fixed;inset:0;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#10163f,#000 70%);animation:fo .6s 2.7s forwards}#splash img{width:200px;height:200px;border-radius:40px;animation:pop 1.6s cubic-bezier(.2,1.3,.4,1) both,glow 1.2s 1.6s ease-in-out infinite alternate}#splash p{color:#fff;font:700 1.3rem Inter,sans-serif;letter-spacing:7px;margin-top:24px;animation:up 1s .9s both}@keyframes pop{0%{transform:scale(.55) rotate(-200deg);opacity:1}70%{transform:scale(1.12) rotate(8deg);opacity:1}100%{transform:none;opacity:1}}@keyframes glow{to{box-shadow:0 0 60px 10px rgba(25,211,230,.55),0 0 90px 20px rgba(232,62,140,.35)}}@keyframes up{from{opacity:0;transform:translateY(20px)}}@keyframes fo{to{opacity:0;visibility:hidden}}.menu{display:grid;grid-template-columns:1fr 1fr;gap:10px}.menu .opt{margin:0;text-align:center;font-weight:600}table{border-collapse:collapse;margin:auto}td.c{width:var(--cs);height:var(--cs);border:1px solid var(--bd);padding:0;cursor:pointer;text-align:center;font-size:calc(var(--cs)*.6)}td.f{background:var(--pri)}td.x::after{content:"✕";color:var(--mut)}td.k{font-size:11px;color:var(--mut);text-align:center;vertical-align:bottom;padding:1px 3px;line-height:1.1}.r5{border-right-color:var(--mut)!important}.b5{border-bottom-color:var(--mut)!important}.sg{display:grid;margin:auto;width:max-content;touch-action:none;user-select:none;border:2px solid var(--tx)}.sc{height:var(--cs);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:calc(var(--cs)*.5)}.su{display:grid;grid-template-columns:repeat(9,1fr);margin:auto;max-width:400px;border:2px solid var(--tx)}.su div{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);font-size:1.2rem;cursor:pointer}.su .g{font-weight:700}.su .sel{background:color-mix(in srgb,var(--pri) 30%,transparent)}.su .bad{color:var(--bad)}.su div:nth-child(3n){border-right:2px solid var(--tx)}.su div:nth-child(9n){border-right:0}.su div:nth-child(n+19):nth-child(-n+27),.su div:nth-child(n+46):nth-child(-n+54){border-bottom:2px solid var(--tx)}.pad{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}.pad button{padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font-size:1.1rem;cursor:pointer}.lnk{background:none;border:0;color:var(--mut);margin-top:12px;cursor:pointer;width:100%;font-family:inherit}.aqi{display:grid;gap:6px;border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px}.aqi input{margin:0}.mini{justify-self:end;border:0;background:var(--bg);color:var(--bad);border-radius:8px;padding:6px 10px;cursor:pointer}.row{display:flex;gap:8px;margin-top:10px}.row .btn{flex:1}.btn.alt{background:var(--mut)}.lbr{display:flex;gap:10px;padding:8px 10px;border-radius:10px}.lbr.me{background:color-mix(in srgb,var(--pri) 18%,transparent);font-weight:700}.lbr span:nth-child(2){flex:1}.lbr span:first-child{width:1.6em;color:var(--mut)}h3{margin:18px 0 6px;text-align:center}.rt{font-family:"Noto Naskh Arabic",serif;line-height:1.8}
 </style>
 </head>
 <body>
@@ -46,16 +46,21 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
 <p class="sub" id="sub">Puzzles · Math · Languages</p>
 
 <!-- Page 1: start -->
-<div id="splash"><img id="sl" alt=""><p>QUIZLISH</p></div>
+<canvas id="space" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none"></canvas>
+<div id="splash"><img id="sl" alt="Quizlish" src="data:image/webp;base64,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"><p>QUIZLISH</p></div>
 <div class="card" id="pName"><h3 style="margin-top:0">👋 Welcome</h3><input id="name" maxlength="30" placeholder="Enter your name"><button class="btn" id="ngo">Continue</button>
   <button class="lnk" id="adm">⚙ Admin</button></div>
-<div class="card hide" id="pMenu"><h3 style="margin-top:0" id="hi"></h3><div class="menu" id="menu"></div><button class="lnk" id="mback">⎋ Log out</button></div>
-<div class="card hide" id="pLevel"><h3 style="margin-top:0" id="lvt"></h3><div id="lvs"></div><button class="lnk" id="lback">← Back</button></div>
+<div class="card hide" id="pMenu"><h3 style="margin-top:0" id="hi"></h3><div class="menu" id="menu"></div><button class="btn alt" id="lbbtn" style="margin-top:12px">🏆 Leaderboard · all users</button><button class="lnk" id="mback">⎋ Log out</button></div>
+<div class="card hide" id="pLevel"><h3 style="margin-top:0" id="lvt"></h3><div id="qnbox" class="qn"><label>🔢 Number of questions: <b id="qnv">30</b></label><input type="range" id="qn" min="5" max="40" value="30"></div><div id="lvs"></div><button class="lnk" id="lback">← Back</button></div>
 <div class="card hide" id="pPlay"><div class="top"><span id="ptitle"></span><span class="timer" id="ptm">0s</span></div>
   <div id="board" style="overflow-x:auto;padding-bottom:4px"></div><div id="pctl"></div>
-  <div class="row"><button class="btn" id="pfin">Finish</button><button class="btn alt" id="pquit">Quit</button></div></div>
+  <div class="row"><button class="btn" id="pfin">Finish</button><button class="btn alt" id="pquit">✖ Exit</button></div></div>
+<div class="card hide" id="pLB"><h3 style="margin-top:0">🏆 Leaderboard · all users</h3>
+  <select id="lbsel" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)"></select>
+  <p class="msg" style="margin:8px 0 0">Ranked by accuracy, then fastest time ⏱</p><div id="lbfull" style="margin-top:6px"></div><button class="btn alt" id="lbback" style="margin-top:12px">← Back</button></div>
 <div class="card hide" id="pStart">
   <p class="msg" id="gsub"></p>
+  <div class="qn"><label>🔢 Number of questions: <b id="qnv2">30</b></label><input type="range" id="qn2" min="5" max="40" value="30"></div>
   <div class="langs" id="langs"></div>
   <button class="btn" id="go"></button>
   <button class="lnk" id="gback">← Back</button>
@@ -69,6 +74,7 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
   <p class="q" id="qt"></p>
   <div id="opts"></div>
   <button class="btn alt" id="skip" style="margin-top:6px">⏭ Skip</button>
+  <button class="btn alt" id="qexit" style="margin-top:8px">✖ Exit</button>
 </div>
 
 <!-- Page 3: result -->
@@ -78,6 +84,7 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
   <div class="msg" id="rm"></div>
   <div id="rev"></div>
   <h3 id="lbt"></h3><div id="lb"></div>
+  <button class="btn alt" id="lbres" style="margin-top:12px">🏆 Full leaderboard</button>
   <button class="btn" id="again" style="margin-top:14px"></button>
 </div>
 <div class="card hide" id="pLogin">
@@ -89,7 +96,7 @@ input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;back
 <div class="card hide" id="pAdmin">
   <h3 style="margin-top:0">⚙ Admin</h3>
   <div class="langs" id="atabs"><button class="on">👥 Results</button><button>🎛 Quizzes</button><button>⚙ Settings</button></div>
-  <div id="t1"><div class="msg" id="asum"></div><div id="ares"></div></div>
+  <div id="t1"><div class="msg" id="asum"></div><button class="btn alt" id="adel" style="margin-bottom:10px">🗑 Delete all history</button><div id="ares"></div></div>
   <div id="t2" class="hide"><b>Games shown on the menu</b><div id="agm" style="margin:6px 0 14px"></div>
     <b>Questions (added to every game of that level)</b>
     <select id="alang" style="width:100%;padding:10px;margin:8px 0;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)"></select>
@@ -205,7 +212,7 @@ let NUM=30,SEC=45;
 function hash(s){let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
 function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function shuffle(arr,r){arr=arr.slice();for(let k=arr.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[arr[k],arr[j]]=[arr[j],arr[k]]}return arr}
-function show(id){["pName","pMenu","pLevel","pPlay","pStart","pQuiz","pRes","pLogin","pAdmin"].forEach(p=>$(p).classList.toggle("hide",p!==id))}
+function show(id){["pName","pMenu","pLevel","pPlay","pLB","pStart","pQuiz","pRes","pLogin","pAdmin"].forEach(p=>$(p).classList.toggle("hide",p!==id))}
 
 function setLang(l){
   L=l;const t=T[l];
@@ -242,10 +249,10 @@ function pick(o,btn,sk){
   const q=list[i];if(o===q.a)score++;
   log.push({k:q.k,q:q.q,a:q.a,u:o,s:sk});
   [...$("opts").children].forEach(b=>{if(b.textContent===q.a)b.classList.add("ok");else if(b===btn)b.classList.add("bad")});
-  setTimeout(()=>{i++;next()},900);
+  const id=QID;setTimeout(()=>{if(id===QID){i++;next()}},900);
 }
 
-function finish(){TOTAL=list.length;
+function finish(){TOTAL=list.length;USED=Math.round((Date.now()-QS)/1000);
   const t=T[L];show("pRes");
   $("rt").textContent=t.res;$("sc").textContent=score+" / "+list.length;
   $("rm").textContent=t.tip[score>=list.length?2:score>=list.length/2?1:0]+" "+t.come;
@@ -259,17 +266,28 @@ function finish(){TOTAL=list.length;
 let DB=null;
 const DBP=(async()=>{try{DB=await claude.use("db")}catch(e){DB=null}if(DB)loadShared()})();
 const dayKey=()=>{const d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()};
+let QID=0,LASTMODE="",QN=30,QS=0,USED=0;
+const fmt=s=>s==null?"–":Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+function setQN(v){QN=+v;["qn","qn2"].forEach(id=>$(id).value=QN);["qnv","qnv2"].forEach(id=>$(id).textContent=QN)}
+function localRows(){const a=[];try{for(let k=0;k<localStorage.length;k++){const key=localStorage.key(k);if(/^ql_\d{4}-\d+-\d+$/.test(key))a.push(...JSON.parse(localStorage.getItem(key)))}}catch(e){}return a}
+async function getRows(mode,ids){let rows=[];
+  try{if(DB){const q=mode?DB.collection("scores").where("mode","==",mode):DB.collection("scores");const sn=await q.limit(1000).get();rows=sn.docs.map(d=>ids?{...d.data(),_id:d.id}:d.data())}}catch(e){}
+  const seen=new Set(rows.map(r=>r.name+"|"+r.t));
+  localRows().filter(r=>(!mode||r.mode===mode)&&!seen.has(r.name+"|"+r.t)).forEach(r=>rows.push(r));return rows}
+function best(rows){const pc=r=>r.total?r.score/r.total:0,tm=r=>r.secs==null?1e9:r.secs,cmp=(a,b)=>pc(b)-pc(a)||tm(a)-tm(b)||a.t-b.t,m=new Map();rows.forEach(r=>{const k=(r.name||"").toLowerCase(),o=m.get(k);if(!o||cmp(r,o)<0)m.set(k,r)});return[...m.values()].sort(cmp)}
+function drawLB(box,rows,me,n){box.textContent="";if(!rows.length){box.textContent=T[L].nolb;return}
+  rows.slice(0,n).forEach((r,k)=>{const d=document.createElement("div");d.className="lbr"+(me&&r.t===me.t&&r.name===me.name?" me":"");[k+1,r.name,r.score+"/"+r.total,fmt(r.secs)].forEach(x=>{const sp=document.createElement("span");sp.textContent=x;d.appendChild(sp)});box.appendChild(d)})}
 async function saveScore(){
-  const t=T[L],row={name:$("name").value.trim().slice(0,30)||t.guest,score,total:TOTAL,mode:MODE,day:dayKey(),t:Date.now()};
-  let rows=null;
-  $("lbt").textContent="🏆 "+t.lb+" · "+MODENAME;$("lb").textContent="…";
-  try{ if(DB){await DB.collection("scores").add(row);const sn=await DB.collection("scores").where("day","==",row.day).limit(300).get();rows=sn.docs.map(d=>d.data()).filter(r=>r.mode===MODE)} }catch(e){rows=null}
-  if(!rows){try{const k="ql_"+row.day;const a=JSON.parse(localStorage.getItem(k)||"[]");a.push(row);localStorage.setItem(k,JSON.stringify(a));rows=a.filter(r=>r.mode===MODE)}catch(e){rows=[row]}}
-  rows.sort((a,b)=>b.score-a.score||a.t-b.t);
-  const box=$("lb");box.textContent="";
-  rows.slice(0,10).forEach((r,n)=>{const d=document.createElement("div");d.className="lbr"+(r.t===row.t&&r.name===row.name?" me":"");
-    [n+1,r.name+(d.className.includes("me")?" ("+t.you+")":""),r.score+"/"+r.total].forEach(x=>{const sp=document.createElement("span");sp.textContent=x;d.appendChild(sp)});box.appendChild(d)});
-}
+  const t=T[L],row={name:$("name").value.trim().slice(0,30)||t.guest,score,total:TOTAL,mode:MODE,day:dayKey(),secs:USED,t:Date.now()};
+  $("lbt").textContent="🏆 "+t.lb+" · "+MODENAME;$("lb").textContent="…";LASTMODE=MODE;
+  try{const k="ql_"+row.day;const a=JSON.parse(localStorage.getItem(k)||"[]");a.push(row);localStorage.setItem(k,JSON.stringify(a))}catch(e){}
+  try{if(DB)await DB.collection("scores").add(row)}catch(e){}
+  drawLB($("lb"),best(await getRows(MODE)),row,10)}
+function openLB(){const sel=$("lbsel");
+  if(!sel.options.length){const add=(v,l)=>{const o=document.createElement("option");o.value=v;o.textContent=l;sel.appendChild(o)};
+    Object.keys(G).forEach(k=>{if(k==="gram")["en","ur","ar","all"].forEach(l=>add("grammar-"+l,G[k][0]+" · "+T[l].n));else G[k][1].forEach((nm,n)=>add(k+"-"+n,G[k][0]+" · "+nm))})}
+  if(LASTMODE)sel.value=LASTMODE;show("pLB");showLB()}
+async function showLB(){const b=$("lbfull");b.textContent="…";drawLB(b,best(await getRows($("lbsel").value)),null,20)}
 
 let aL="en",editIdx=-1;
 async function loadQ(){
@@ -328,15 +346,14 @@ function adminRender(){
 }
 const gl=m=>{const[k,n]=m.split("-");return G[k]?G[k][0]+" · "+G[k][1][n]:"Grammar · "+n};
 async function loadResults(){
-  const box=$("ares");box.textContent="Loading…";let rows=[];
-  try{if(DB){const sn=await DB.collection("scores").limit(500).get();rows=sn.docs.map(d=>d.data())}}catch(e){}
-  try{for(let k=0;k<localStorage.length;k++){const key=localStorage.key(k);if(/^ql_\d{4}-\d+-\d+$/.test(key))rows.push(...JSON.parse(localStorage.getItem(key)))}}catch(e){}
-  rows.sort((a,b)=>b.t-a.t);box.textContent="";
-  $("asum").textContent=rows.length+" results · "+new Set(rows.map(r=>r.name)).size+" players";
-  const add=(c,h)=>{const d=document.createElement("div");d.className="arw"+(h?" h":"");c.forEach(x=>{const s=document.createElement("span");s.textContent=x;d.appendChild(s)});box.appendChild(d)};
-  add(["Name","Game","Score","Date"],1);
-  rows.slice(0,300).forEach(r=>add([r.name,gl(r.mode||""),r.score+"/"+r.total,r.day]));
+  const box=$("ares");box.textContent="Loading…";const rows=(await getRows(null,true)).sort((a,b)=>b.t-a.t);box.textContent="";
+  $("asum").textContent=rows.length+" results · "+new Set(rows.map(r=>r.name)).size+" players · kept until you delete them";
+  const add=(c,h,r)=>{const d=document.createElement("div");d.className="arw"+(h?" h":"");c.forEach(x=>{const s=document.createElement("span");s.textContent=x;d.appendChild(s)});
+    const s=document.createElement("span");if(r){const x=document.createElement("button");x.className="mini";x.textContent="✖";x.onclick=async()=>{try{if(r._id&&DB)await DB.collection("scores").doc(r._id).delete()}catch(e){}rmLocal(r);loadResults()};s.appendChild(x)}d.appendChild(s);box.appendChild(d)};
+  add(["Name","Game","Score","Time","Date"],1);
+  rows.slice(0,300).forEach(r=>add([r.name,gl(r.mode||""),r.score+"/"+r.total,fmt(r.secs),r.day],0,r));
 }
+function rmLocal(r){try{Object.keys(localStorage).filter(k=>/^ql_\d{4}-\d+-\d+$/.test(k)).forEach(k=>{localStorage.setItem(k,JSON.stringify(JSON.parse(localStorage.getItem(k)).filter(x=>!(x.t===r.t&&x.name===r.name))))})}catch(e){}}
 function tab(n){["t1","t2","t3"].forEach((id,i)=>$(id).classList.toggle("hide",i!==n));[...$("atabs").children].forEach((b,i)=>b.classList.toggle("on",i===n));$("amsg").textContent="";if(n==0)loadResults();else adminRender()}
 async function saveCfg(){
   const cl=a=>a.map(q=>[(q[0]||"").trim(),(q[1]||"").trim(),...q.slice(2).map(v=>(v||"").trim()).filter(Boolean)]).filter(q=>q[0]&&q[1]&&q.length>=3);
@@ -357,17 +374,22 @@ $("alogin").onclick=()=>{if(hash($("apw").value.trim())===AH){$("aerr").textCont
 $("apw").onkeydown=e=>{if(e.key==="Enter")$("alogin").click()};
 $("aadd").onclick=()=>{arr().push(["","","","",""]);adminRender()};
 $("arst").onclick=()=>{try{Object.keys(localStorage).filter(k=>/^ql_(gk|sarf|gr|math)/.test(k)).forEach(k=>localStorage.removeItem(k));$("amsg").textContent="Question history cleared ✔"}catch(e){}};
+$("qn").oninput=$("qn2").oninput=e=>setQN(e.target.value);$("lbbtn").onclick=openLB;$("lbres").onclick=openLB;$("lbback").onclick=()=>show("pMenu");$("lbsel").onchange=showLB;
+$("qexit").onclick=()=>{QID++;clearInterval(tick);locked=true;show("pMenu")};
+$("adel").onclick=async()=>{const b=$("adel");if(!b.dataset.c){b.dataset.c=1;b.textContent="⚠ Tap again to delete ALL history";setTimeout(()=>{delete b.dataset.c;b.textContent="🗑 Delete all history"},4000);return}
+  delete b.dataset.c;b.textContent="🗑 Delete all history";const rows=await getRows(null,true);for(const r of rows){try{if(r._id&&DB)await DB.collection("scores").doc(r._id).delete()}catch(e){}}
+  try{Object.keys(localStorage).filter(k=>/^ql_\d{4}-\d+-\d+$/.test(k)).forEach(k=>localStorage.removeItem(k))}catch(e){}loadResults()};
 $("asave").onclick=saveCfg;$("aexit").onclick=$("aback1").onclick=leaveAdmin;
 $("skip").onclick=()=>{if(!locked)pick(null,null,1)};
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&(!$("pLogin").classList.contains("hide")||!$("pAdmin").classList.contains("hide")))leaveAdmin()});
 
 let MODE="",MODENAME="",TOTAL=0,PT,PS,KF=null,FIN=null;
 const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),rn=Math.random;
-function runQuiz(l,m,n){list=l;i=0;score=0;log=[];MODE=m;MODENAME=n;show("pQuiz");next()}
-function mathQ(lv){let q,a,t=R(0,3);
+function runQuiz(l,m,n){QID++;QS=Date.now();list=l;i=0;score=0;log=[];MODE=m;MODENAME=n;show("pQuiz");next()}
+function mathQ(lv){let q,a,t=R(0,5);
   if(lv==0){const x=R(5,70),y=R(5,60);if(t<2){q=x+" + "+y;a=x+y}else{q=Math.max(x,y)+" − "+Math.min(x,y);a=Math.abs(x-y)}}
   else if(lv==1){const x=R(6,15),y=R(6,15),z=R(10,90);if(t<2){q=x+" × "+y;a=x*y}else if(t==2){q=x+" × "+y+" + "+z;a=x*y+z}else{q=z+" + "+x+" × "+y;a=z+x*y}}
-  else{const x=R(6,20),y=R(6,20),z=R(3,12),w=R(5,40);if(t==0){q="("+x+" + "+y+") × "+z+" − "+w;a=(x+y)*z-w}else if(t==1){q=x+"² + "+y+"²";a=x*x+y*y}else if(t==2){const p=5*R(2,9),m=R(2,20);q=p+"% of "+m*20;a=p*m/5}else{q="√"+x*x+" + √"+y*y;a=x+y}}
+  else{const x=R(6,20),y=R(6,20),z=R(3,12),w=R(5,40);if(t==0){q="("+x+" + "+y+") × "+z+" − "+w;a=(x+y)*z-w}else if(t==1){q=x+"² + "+y+"²";a=x*x+y*y}else if(t==2){const p=5*R(2,9),m=R(2,20);q=p+"% of "+m*20;a=p*m/5}else if(t==3){q="√"+x*x+" + √"+y*y;a=x+y}else if(t==4){const u=R(5,12),v=R(5,11);q=u+"³ − "+v+"²";a=u**3-v*v}else{q="("+x+" + "+y+")² − ("+x+" − "+y+")²";a=4*x*y}}
   const s=new Set([a]);while(s.size<4){const d=a+R(-12,12);if(d>0)s.add(d)}
   return{k:"en",q:q+" = ?",a:String(a),o:shuffle([...s].map(String),rn)}}
 const SARF=[[["جذر كلمة «كاتب»","كتب","كات","تكب","بتك"],["الماضي من «يكتب»","كتب","اكتب","كاتب","مكتوب"],["اسم الفاعل من «فتح»","فاتح","مفتوح","فتح","يفتح"],["اسم المفعول من «كتب»","مكتوب","كاتب","كتابة","اكتب"],["فعل الأمر من «يدرس»","ادرس","درس","دارس","مدروس"]],
@@ -375,7 +397,7 @@ const SARF=[[["جذر كلمة «كاتب»","كتب","كات","تكب","بتك"
 [["الفعل المثال:","وعد","قال","رمى","كتب"],["الفعل الأجوف:","قال","وعد","رمى","كتب"],["الفعل الناقص:","رمى","قال","وعد","ضرب"],["مضارع «وعد»","يعد","يوعد","يعيد","يواعد"],["وزن «تكاتب»","تفاعل","تفعّل","استفعل","افتعل"]]];
 const mapList=a=>shuffle(a,rn).map(q=>({k:"ar",q:q[0],a:q[1],o:shuffle(q.slice(1),rn)}));
 function ptimer(){PS=Date.now();clearInterval(PT);PT=setInterval(()=>$("ptm").textContent=Math.floor((Date.now()-PS)/1000)+"s",1000)}
-function endPz(sc,msg){clearInterval(PT);KF=null;const t=T[L];score=sc;TOTAL=100;show("pRes");$("rt").textContent=t.res+" · "+MODENAME;$("sc").textContent=sc+" / 100";$("rm").textContent=msg+" · "+Math.floor((Date.now()-PS)/1000)+"s";$("rev").innerHTML="";window.scrollTo(0,0);saveScore()}
+function endPz(sc,msg){clearInterval(PT);KF=null;USED=Math.round((Date.now()-PS)/1000);const t=T[L];score=sc;TOTAL=100;show("pRes");$("rt").textContent=t.res+" · "+MODENAME;$("sc").textContent=sc+" / 100";$("rm").textContent=msg+" · "+Math.floor((Date.now()-PS)/1000)+"s";$("rev").innerHTML="";window.scrollTo(0,0);saveScore()}
 function startNono(n){
   const g=Array.from({length:n},()=>Array.from({length:n},()=>+(rn()<.55)));
   const cl=a=>{const o=[];let c=0;for(const v of a){if(v)c++;else if(c){o.push(c);c=0}}if(c)o.push(c);return o.length?o:[0]};
@@ -437,11 +459,11 @@ function startSud(_,lv){
 }
 const G={math:["🧮 Math Talent",["Easy","Medium","Hard"]],sarf:["📜 Sarf IQ · الصرف",["Easy","Medium","Hard"]],nono:["🔲 Nonogram",["5×5","10×10","15×15","20×20"]],shi:["🟦 Shikaku",["5×5","10×10","15×15","20×20"]],gk:["🌍 GK Quiz",["Easy","Medium","Hard"]],gram:["📝 Grammar Quiz"],sud:["🔢 Sudoku",["Easy","Medium","Hard"]]};
 function choose(k){
-  if(k==="gram"){setLang(L);show("pStart");return}
-  L="en";setLang("en");$("lvt").textContent=G[k][0];$("lvs").textContent="";
+  if(k==="gram"){setLang(L);setQN(NQ);show("pStart");return}
+  L="en";setLang("en");setQN(NQ);$("qnbox").classList.toggle("hide",!["math","sarf","gk"].includes(k));$("lvt").textContent=G[k][0];$("lvs").textContent="";
   G[k][1].forEach((nm,n)=>{const bt=document.createElement("button");bt.className="opt";bt.textContent=nm;bt.onclick=()=>launch(k,n);$("lvs").appendChild(bt)});show("pLevel")}
 function launch(k,n){const nm=G[k][0]+" · "+G[k][1][n],md=k+"-"+n;KF=null;
-  if(k==="math")runQuiz(fresh(uniq([...Array.from({length:90},()=>mathQ(n)),...exq("math"+n,"en")]),"math"+n,NQ),md,nm);
+  if(k==="math")runQuiz(fresh(uniq([...Array.from({length:90},()=>mathQ(n)),...exq("math"+n,"en")]),"math"+n,QN),md,nm);
   else if(k==="sarf")runQuiz(sarfFresh(n),md,nm);else if(k==="gk")runQuiz(gkList(n),md,nm);
   else{MODE=md;MODENAME=nm;$("ptitle").textContent=nm;$("pctl").textContent="";$("pctl").onclick=null;$("board").onclick=null;$("board").onpointerdown=$("board").onpointermove=$("board").onpointerup=null;show("pPlay");ptimer();({nono:startNono,shi:startShi,sud:startSud})[k]([5,10,15,20][n],n)}}
 function buildMenu(){$("menu").textContent="";Object.keys(G).forEach(k=>{if(OFF[k])return;const bt=document.createElement("button");bt.className="opt";bt.textContent=G[k][0];bt.onclick=()=>choose(k);$("menu").appendChild(bt)})}buildMenu();
@@ -450,7 +472,7 @@ $("name").addEventListener("keydown",e=>{if(e.key==="Enter")$("ngo").click()});
 $("mback").onclick=()=>{$("name").value="";$("hi").textContent="";show("pName")};$("lback").onclick=()=>show("pMenu");$("gback").onclick=()=>show("pMenu");
 $("pfin").onclick=()=>FIN&&FIN();$("pquit").onclick=()=>{clearInterval(PT);KF=null;show("pMenu")};
 document.addEventListener("keydown",e=>{if(KF&&!$("pPlay").classList.contains("hide"))KF(e)});
-$("sl").src=document.querySelector(".logo").src;$("splash").onclick=()=>$("splash").remove();setTimeout(()=>{const x=$("splash");x&&x.remove()},3400);
+$("splash").onclick=()=>$("splash").remove();setTimeout(()=>{const x=$("splash");x&&x.remove()},3400);
 const pk=a=>a[Math.floor(rn()*a.length)];
 function opts(a,c,n=3){const s=new Set();for(const x of shuffle(c,rn)){if(x!==a)s.add(x);if(s.size>=n)break}return shuffle([a,...s],rn)}
 const PA={en:[["hot","cold"],["big","small"],["fast","slow"],["happy","sad"],["early","late"],["strong","weak"],["rich","poor"],["hard","soft"],["open","close"],["clean","dirty"],["light","dark"],["new","old"],["near","far"],["ancient","modern"],["generous","stingy"],["brave","cowardly"]],
@@ -469,26 +491,31 @@ const artQ=n=>shuffle(NN,rn).slice(0,n).map(([w,a])=>({k:"en",q:"This is ___ "+w
 const GEN={en:n=>[...ant("en",1),...plu("en",1),...verbQ(2),...artQ(n-4)],ur:n=>[...ant("ur",3),...plu("ur",n-3)],ar:n=>[...ant("ar",3),...plu("ar",n-3)]};
 const uniq=a=>[...new Map(a.map(x=>[x.q,x])).values()];
 function fresh(pool,key,n){let seen=[];try{seen=JSON.parse(localStorage.getItem("ql_"+key)||"[]")}catch(e){}
-  let c=pool.filter(x=>!seen.includes(x.q));if(c.length<n){seen=[];c=pool}
-  const p=shuffle(c,rn).slice(0,n);try{localStorage.setItem("ql_"+key,JSON.stringify(seen.concat(p.map(x=>x.q)).slice(-400)))}catch(e){}return p}
+  let p=shuffle(pool.filter(x=>!seen.includes(x.q)),rn).slice(0,n);
+  if(p.length<n)p=p.concat(pool.filter(x=>seen.includes(x.q)).sort((a,b)=>seen.indexOf(a.q)-seen.indexOf(b.q)).slice(0,n-p.length));
+  const ids=p.map(x=>x.q);try{localStorage.setItem("ql_"+key,JSON.stringify(seen.filter(q=>!ids.includes(q)).concat(ids).slice(-400)))}catch(e){}
+  return shuffle(p,rn)}
 const GP={en:()=>[...ant("en",16),...plu("en",15),...verbQ(10),...verbQ(10),...artQ(14)],ur:()=>[...ant("ur",16),...ant("ur",16),...plu("ur",13)],ar:()=>[...ant("ar",16),...ant("ar",16),...plu("ar",12)]};
-const grammarList=ks=>shuffle(ks.flatMap(k=>fresh(uniq([...Q[k].filter(q=>q.length>=3).map(q=>({k,q:q[0],a:q[1],o:shuffle(q.slice(1),rn)})),...GP[k](),...GP[k]()]),"gr"+k,Math.round(NQ/ks.length))),rn);
-const sarfFresh=lv=>fresh(uniq([...Array.from({length:12},()=>sarfList(lv)).flat(),...exq("sarf"+lv,"ar")]),"sarf"+lv,NQ);
+const grammarList=ks=>shuffle(ks.flatMap(k=>fresh(uniq([...Q[k].filter(q=>q.length>=3).map(q=>({k,q:q[0],a:q[1],o:shuffle(q.slice(1),rn)})),...GP[k](),...GP[k]()]),"gr"+k,Math.round(QN/ks.length))),rn);
+const sarfFresh=lv=>fresh(uniq([...Array.from({length:12},()=>sarfList(lv)).flat(),...exq("sarf"+lv,"ar")]),"sarf"+lv,QN);
 const CP={e:[["France","Paris"],["Japan","Tokyo"],["Italy","Rome"],["Egypt","Cairo"],["India","New Delhi"],["Pakistan","Islamabad"],["Saudi Arabia","Riyadh"],["Germany","Berlin"],["Spain","Madrid"],["China","Beijing"],["Turkey","Ankara"],["UAE","Abu Dhabi"],["Canada","Ottawa"],["Australia","Canberra"],["Russia","Moscow"],["Brazil","Brasília"],["Indonesia","Jakarta"],["Mexico","Mexico City"],["Nepal","Kathmandu"],["Oman","Muscat"]],
 m:[["Argentina","Buenos Aires"],["Kenya","Nairobi"],["Morocco","Rabat"],["Iran","Tehran"],["Thailand","Bangkok"],["Poland","Warsaw"],["Norway","Oslo"],["Nigeria","Abuja"],["Vietnam","Hanoi"],["Peru","Lima"],["Afghanistan","Kabul"],["Bangladesh","Dhaka"],["Qatar","Doha"],["Iraq","Baghdad"],["Jordan","Amman"],["Kuwait","Kuwait City"],["Ghana","Accra"],["Ethiopia","Addis Ababa"],["Cuba","Havana"],["Greece","Athens"]],
-h:[["Kazakhstan","Astana"],["Myanmar","Naypyidaw"],["Burkina Faso","Ouagadougou"],["Mongolia","Ulaanbaatar"],["Bhutan","Thimphu"],["Ecuador","Quito"],["Suriname","Paramaribo"],["Slovakia","Bratislava"],["Eritrea","Asmara"],["Tajikistan","Dushanbe"],["Malawi","Lilongwe"],["Tunisia","Tunis"],["Uzbekistan","Tashkent"],["Azerbaijan","Baku"],["Georgia","Tbilisi"],["Zambia","Lusaka"],["Uganda","Kampala"],["Paraguay","Asunción"]]};
-const SY={e:[["Hydrogen","H"],["Oxygen","O"],["Carbon","C"],["Helium","He"],["Nitrogen","N"]],m:[["Gold","Au"],["Silver","Ag"],["Iron","Fe"],["Sodium","Na"],["Potassium","K"],["Copper","Cu"]],h:[["Tungsten","W"],["Mercury","Hg"],["Tin","Sn"],["Antimony","Sb"],["Rubidium","Rb"],["Lead","Pb"],["Zinc","Zn"],["Nickel","Ni"],["Platinum","Pt"]]};
+h:[["Kazakhstan","Astana"],["Myanmar","Naypyidaw"],["Burkina Faso","Ouagadougou"],["Mongolia","Ulaanbaatar"],["Bhutan","Thimphu"],["Ecuador","Quito"],["Suriname","Paramaribo"],["Slovakia","Bratislava"],["Eritrea","Asmara"],["Tajikistan","Dushanbe"],["Malawi","Lilongwe"],["Tunisia","Tunis"],["Uzbekistan","Tashkent"],["Azerbaijan","Baku"],["Georgia","Tbilisi"],["Zambia","Lusaka"],["Uganda","Kampala"],["Paraguay","Asunción"],["Brunei","Bandar Seri Begawan"],["Comoros","Moroni"],["Eswatini","Mbabane"],["Kyrgyzstan","Bishkek"],["Turkmenistan","Ashgabat"],["Burundi","Gitega"],["Tanzania","Dodoma"],["Côte d’Ivoire","Yamoussoukro"],["Belize","Belmopan"],["Bolivia","Sucre"],["Benin","Porto-Novo"]]};
+const SY={e:[["Hydrogen","H"],["Oxygen","O"],["Carbon","C"],["Helium","He"],["Nitrogen","N"]],m:[["Gold","Au"],["Silver","Ag"],["Iron","Fe"],["Sodium","Na"],["Potassium","K"],["Copper","Cu"]],h:[["Tungsten","W"],["Mercury","Hg"],["Tin","Sn"],["Antimony","Sb"],["Rubidium","Rb"],["Lead","Pb"],["Zinc","Zn"],["Nickel","Ni"],["Platinum","Pt"],["Cobalt","Co"],["Chromium","Cr"],["Bismuth","Bi"]]};
 const GKC=[[["Which is the largest planet?","Jupiter","Saturn","Earth","Mars"],["How many continents are there?","7","5","6","8"],["Which is the largest ocean?","Pacific","Atlantic","Indian","Arctic"],["Hardest natural substance?","Diamond","Gold","Iron","Quartz"],["Founder of Pakistan?","Muhammad Ali Jinnah","Allama Iqbal","Liaquat Ali Khan","Sir Syed Ahmad Khan"],["Fastest land animal?","Cheetah","Lion","Horse","Leopard"],["Which planet is called the Red Planet?","Mars","Venus","Mercury","Neptune"],["Largest mammal?","Blue whale","Elephant","Giraffe","Hippopotamus"],["Days in a leap year?","366","365","364","367"],["Which gas do we need to breathe?","Oxygen","Helium","Hydrogen","Methane"],["Largest country by area?","Russia","Canada","China","USA"],["Ramadan is which Islamic month?","Ninth","Seventh","Tenth","Twelfth"]],
 [["Who wrote Hamlet?","Shakespeare","Dickens","Marlowe","Milton"],["Smallest prime number?","2","1","3","5"],["Currency of Japan?","Yen","Won","Yuan","Ringgit"],["Who formulated the law of gravity?","Isaac Newton","Galileo","Einstein","Kepler"],["Chemical formula of water?","H2O","CO2","O2","NaCl"],["Highest mountain above sea level?","Mount Everest","K2","Kangchenjunga","Kilimanjaro"],["Which organ pumps blood?","Heart","Liver","Lung","Kidney"],["Year Pakistan was founded?","1947","1945","1948","1950"],["Who painted the Mona Lisa?","Leonardo da Vinci","Michelangelo","Raphael","Picasso"],["National language of Pakistan?","Urdu","Punjabi","Sindhi","English"],["Approximate speed of light?","300,000 km/s","150,000 km/s","30,000 km/s","3,000,000 km/s"],["Largest hot desert?","Sahara","Gobi","Thar","Arabian"]],
 [["Who wrote “The Prince”?","Machiavelli","Dante","Hobbes","Locke"],["Which element has atomic number 26?","Iron","Nickel","Cobalt","Copper"],["Longest river in Africa?","Nile","Congo","Niger","Zambezi"],["Which treaty ended WWI with Germany?","Treaty of Versailles","Treaty of Paris","Treaty of Tordesillas","Treaty of Westphalia"],["Who discovered penicillin?","Alexander Fleming","Louis Pasteur","Joseph Lister","Robert Koch"],["Smallest country by area?","Vatican City","Monaco","San Marino","Liechtenstein"],["Deepest ocean trench?","Mariana Trench","Puerto Rico Trench","Java Trench","Tonga Trench"],["Who wrote “Shikwa”?","Allama Iqbal","Faiz Ahmed Faiz","Ghalib","Mir Taqi Mir"],["Constantinople fell in which year?","1453","1492","1389","1517"],["Largest moon of Saturn?","Titan","Europa","Ganymede","Io"],["Who invented the World Wide Web?","Tim Berners-Lee","Vint Cerf","Bill Gates","Steve Jobs"],["First woman PM of a Muslim-majority country (1988)?","Benazir Bhutto","Tansu Çiller","Khaleda Zia","Sheikh Hasina"]]];
+const GKH=[["Which treaty ended the Thirty Years’ War in 1648?","Peace of Westphalia","Treaty of Utrecht","Treaty of Versailles","Treaty of Tordesillas"],["Who proved Fermat’s Last Theorem in 1994?","Andrew Wiles","Grigori Perelman","Terence Tao","Paul Erdős"],["Which metal has the highest melting point?","Tungsten","Osmium","Rhenium","Tantalum"],["Who wrote “The Wealth of Nations”?","Adam Smith","David Ricardo","Karl Marx","John Maynard Keynes"],["Who won the First Battle of Panipat in 1526?","Babur","Humayun","Akbar","Sher Shah Suri"],["Who was the last Mughal emperor?","Bahadur Shah Zafar","Aurangzeb","Shah Alam II","Akbar II"],["Which battle ended Napoleon’s rule in 1815?","Waterloo","Austerlitz","Trafalgar","Borodino"],["The Rosetta Stone helped decipher which script?","Egyptian hieroglyphs","Cuneiform","Linear B","Mayan glyphs"],["The Chandrasekhar limit applies to which star?","White dwarf","Neutron star","Red giant","Black hole"],["Which Pakistani won the Nobel Prize in Physics (1979)?","Abdus Salam","A. Q. Khan","Pervez Hoodbhoy","Samar Mubarakmand"],["Who wrote “Critique of Pure Reason”?","Immanuel Kant","Hegel","Nietzsche","Descartes"],["Ibn Khaldun is best known for which work?","Muqaddimah","Al-Qanun fi al-Tibb","Kitab al-Manazir","Al-Shifa"],["Who wrote the “Book of Optics” (Kitab al-Manazir)?","Ibn al-Haytham","Al-Khwarizmi","Al-Razi","Ibn Sina"]];
+const CU={e:[["Japan","Yen"],["USA","Dollar"],["UK","Pound"],["India","Rupee"],["Pakistan","Rupee"],["Saudi Arabia","Riyal"],["the Eurozone","Euro"]],m:[["China","Yuan"],["Russia","Ruble"],["Turkey","Lira"],["South Korea","Won"],["Switzerland","Franc"],["Mexico","Peso"],["Brazil","Real"],["South Africa","Rand"],["UAE","Dirham"],["Thailand","Baht"],["Malaysia","Ringgit"]],h:[["Bhutan","Ngultrum"],["Myanmar","Kyat"],["Georgia","Lari"],["Kazakhstan","Tenge"],["Mongolia","Tögrög"],["Ghana","Cedi"],["Zambia","Kwacha"],["Laos","Kip"],["Cambodia","Riel"],["Poland","Zloty"],["Hungary","Forint"],["Czechia","Koruna"],["Ukraine","Hryvnia"],["Armenia","Dram"],["Uzbekistan","Som"],["Azerbaijan","Manat"]]};
+const CONT=["Africa","Asia","Europe","North America","South America","Oceania"],CN={e:[["Egypt","Africa"],["Brazil","South America"],["Japan","Asia"],["Germany","Europe"],["Canada","North America"],["Australia","Oceania"]],m:[["Kenya","Africa"],["Peru","South America"],["Thailand","Asia"],["Norway","Europe"],["Cuba","North America"],["New Zealand","Oceania"],["Turkey","Asia"]]};
 function gkList(lv){const t=["e","m","h"][lv],ac=Object.values(CP).flat().map(x=>x[1]),as=Object.values(SY).flat().map(x=>x[1]);
-  const pool=[...CP[t].map(([c,a])=>({k:"en",q:"Capital of "+c+"?",a,o:opts(a,[...CP[t].map(x=>x[1]),...ac])})),...SY[t].map(([n,s])=>({k:"en",q:"Chemical symbol of "+n+"?",a:s,o:opts(s,as)})),...GKC[lv].map(q=>({k:"en",q:q[0],a:q[1],o:shuffle(q.slice(1),rn)})),...exq("gk"+lv,"en")];
-  return fresh(pool,"gk"+lv,NQ)}
+  const pool=[...CP[t].map(([c,a])=>({k:"en",q:"Capital of "+c+"?",a,o:opts(a,[...CP[t].map(x=>x[1]),...ac])})),...SY[t].map(([n,s])=>({k:"en",q:"Chemical symbol of "+n+"?",a:s,o:opts(s,as)})),...(lv==2?GKH:GKC[lv]).map(q=>({k:"en",q:q[0],a:q[1],o:shuffle(q.slice(1),rn)})),...(CU[t]||[]).map(([c,a])=>({k:"en",q:"Currency of "+c+"?",a,o:opts(a,Object.values(CU).flat().map(x=>x[1]))})),...(CN[t]||[]).map(([c,a])=>({k:"en",q:c+" is in which continent?",a,o:opts(a,CONT)})),...exq("gk"+lv,"en")];
+  return fresh(pool,"gk"+lv,QN)}
 const RT=["كتب","درس","فتح","جلس","شرب","نصر","ضرب","سمع","علم","فهم","حمل","قتل","خرج","دخل","سكن","كسر","رفع","نظر","ذكر","غفر","عبد","زرع","طلب","سجد","حفظ","ركب","لعب","بحث"];
 const FM={faal:r=>r[0]+"ا"+r[1]+r[2],mafool:r=>"م"+r[0]+r[1]+"و"+r[2],mudari:r=>"ي"+r,amr:r=>"ا"+r};
 const NM={faal:"اسم الفاعل",mafool:"اسم المفعول",mudari:"المضارع",amr:"فعل الأمر"},WZ={faal:"فاعل",mafool:"مفعول",mudari:"يفعل",amr:"افعل"};
-const CAT=["صحيح","مثال","أجوف","ناقص","مضعف"],PZ=["استفعل","انفعل","افتعل","تفاعل","تفعّل","أفعل"];
-const VT=[["كتب","صحيح"],["فتح","صحيح"],["جلس","صحيح"],["وعد","مثال"],["وصل","مثال"],["وقف","مثال"],["وجد","مثال"],["قال","أجوف"],["باع","أجوف"],["نام","أجوف"],["زار","أجوف"],["رمى","ناقص"],["دعا","ناقص"],["مشى","ناقص"],["سعى","ناقص"],["مدّ","مضعف"],["شدّ","مضعف"],["ردّ","مضعف"],["عدّ","مضعف"]];
+const CAT=["صحيح","مثال","أجوف","ناقص","مضعف","لفيف","مهموز"],PZ=["استفعل","انفعل","افتعل","تفاعل","تفعّل","أفعل"];
+const VT=[["كتب","صحيح"],["فتح","صحيح"],["جلس","صحيح"],["وعد","مثال"],["وصل","مثال"],["وقف","مثال"],["وجد","مثال"],["قال","أجوف"],["باع","أجوف"],["نام","أجوف"],["زار","أجوف"],["رمى","ناقص"],["دعا","ناقص"],["مشى","ناقص"],["سعى","ناقص"],["مدّ","مضعف"],["شدّ","مضعف"],["ردّ","مضعف"],["عدّ","مضعف"],["روى","لفيف"],["طوى","لفيف"],["وفى","لفيف"],["نوى","لفيف"],["أخذ","مهموز"],["سأل","مهموز"],["قرأ","مهموز"],["بدأ","مهموز"]];
 const MZ=[["استخرج","استفعل","خرج"],["استغفر","استفعل","غفر"],["استقبل","استفعل","قبل"],["انكسر","انفعل","كسر"],["انطلق","انفعل","طلق"],["اجتمع","افتعل","جمع"],["اشترك","افتعل","شرك"],["انتصر","افتعل","نصر"],["تعاون","تفاعل","عون"],["تقاتل","تفاعل","قتل"],["تعلّم","تفعّل","علم"],["تكسّر","تفعّل","كسر"],["أكرم","أفعل","كرم"],["أرسل","أفعل","رسل"]];
 function sarfList(lv){const out=[],rts=shuffle(RT,rn),K=["faal","mafool","mudari","amr"],vt=shuffle(VT,rn),mz=shuffle(MZ,rn);
   for(let n=0;n<10;n++){const r=rts[n],key=K[R(0,3)],w=FM[key](r);let q,a,c;
@@ -497,6 +524,28 @@ function sarfList(lv){const out=[],rts=shuffle(RT,rn),K=["faal","mafool","mudari
     else{const t=R(0,2);if(t==0){const x=vt[n];q="نوع الفعل «"+x[0]+"»";a=x[1];c=CAT}else{const x=mz[n],z=x[2];if(t==1){q="وزن «"+x[0]+"»";a=x[1];c=PZ}else{q="جذر «"+x[0]+"»";a=z;c=[z[1]+z[0]+z[2],z[2]+z[1]+z[0],...MZ.map(m=>m[2])]}}}
     out.push({k:"ar",q,a,o:opts(a,c)})}
   return out}
+(function(){const c=$("space"),x=c.getContext("2d"),RM=matchMedia("(prefers-reduced-motion:reduce)").matches;let W,H,S=[],A=[],M=[],D=[],N=[];
+ const ast=init=>{const n=R(8,11);return{x:init?Math.random()*W:-60,y:init?Math.random()*H:Math.random()*H*.7,r:R(7,20),vx:.12+Math.random()*.3,vy:.03+Math.random()*.18,a:Math.random()*6.28,va:(Math.random()-.5)*.01,h:R(225,285),pts:Array.from({length:n},(_,k)=>[k/n*6.28,.7+Math.random()*.4])}};
+ const rs=()=>{W=c.width=innerWidth;H=c.height=innerHeight;
+  N=[260,300,200,330,180,240].map((h,i)=>({h,bx:[.15,.8,.5,.25,.85,.55][i],by:[.2,.25,.55,.85,.75,.1][i],r:Math.max(W,H)*(.28+Math.random()*.15),ph:i*1.7}));
+  S=Array.from({length:Math.round(W*H/8000)},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.3,z:Math.random()*.6+.1,p:Math.random()*6.28,c:["#fff","#d6e6ff","#ffe9d0","#eadcff"][R(0,3)]}));
+  D=Array.from({length:60},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.6,v:.1+Math.random()*.25,p:Math.random()*6.28}));
+  A=Array.from({length:Math.max(3,Math.round(W/300))},()=>ast(true))};
+ function frame(t){x.clearRect(0,0,W,H);x.globalCompositeOperation="lighter";
+  for(const n of N){const cx=W*n.bx+Math.sin(t/8000+n.ph)*W*.07,cy=H*n.by+Math.cos(t/9500+n.ph)*H*.07,g=x.createRadialGradient(cx,cy,0,cx,cy,n.r);g.addColorStop(0,"hsla("+n.h+",85%,60%,.2)");g.addColorStop(1,"hsla("+n.h+",85%,55%,0)");x.fillStyle=g;x.fillRect(0,0,W,H)}
+  for(const s of S){s.x-=s.z*.15;s.y+=s.z*.05;if(s.x<0)s.x=W;if(s.y>H)s.y=0;const al=.45+.55*Math.sin(t/900+s.p);
+   if(s.r>1.1){const g=x.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);g.addColorStop(0,"rgba(255,255,255,"+al*.5+")");g.addColorStop(1,"rgba(255,255,255,0)");x.globalAlpha=1;x.fillStyle=g;x.fillRect(s.x-s.r*5,s.y-s.r*5,s.r*10,s.r*10)}
+   x.globalAlpha=al;x.fillStyle=s.c;x.beginPath();x.arc(s.x,s.y,s.r,0,6.28);x.fill()}
+  for(const d of D){d.y-=d.v;if(d.y<0){d.y=H;d.x=Math.random()*W}x.globalAlpha=.2+.2*Math.sin(t/1200+d.p);x.fillStyle="#cdb8ff";x.beginPath();x.arc(d.x+Math.sin(t/3000+d.p)*12,d.y,d.r,0,6.28);x.fill()}
+  x.globalCompositeOperation="source-over";x.globalAlpha=.55;x.shadowBlur=16;x.shadowColor="rgba(170,150,255,.7)";
+  for(const a of A){a.x+=a.vx;a.y+=a.vy;a.a+=a.va;if(a.x>W+60||a.y>H+60)Object.assign(a,ast(false));
+   x.save();x.translate(a.x,a.y);x.rotate(a.a);x.beginPath();a.pts.forEach(([q,k],i)=>{const px=Math.cos(q)*a.r*k,py=Math.sin(q)*a.r*k;i?x.lineTo(px,py):x.moveTo(px,py)});x.closePath();
+   const gr=x.createRadialGradient(-a.r*.3,-a.r*.3,1,0,0,a.r);gr.addColorStop(0,"hsl("+a.h+",30%,68%)");gr.addColorStop(1,"hsl("+a.h+",25%,22%)");x.fillStyle=gr;x.fill();x.restore()}
+  x.shadowBlur=0;x.globalAlpha=1;
+  if(Math.random()<.004)M.push({x:Math.random()*W*.8,y:Math.random()*H*.5,l:0});
+  M=M.filter(m=>{m.x+=7;m.y+=3;m.l++;const g=x.createLinearGradient(m.x,m.y,m.x-90,m.y-39),al=1-m.l/60;g.addColorStop(0,"rgba(255,255,255,"+al+")");g.addColorStop(1,"rgba(180,160,255,0)");x.strokeStyle=g;x.lineWidth=2;x.beginPath();x.moveTo(m.x,m.y);x.lineTo(m.x-90,m.y-39);x.stroke();return m.l<60});
+  if(!RM)requestAnimationFrame(frame)}
+ rs();addEventListener("resize",rs);requestAnimationFrame(frame)})();
 $("go").onclick=start;
 $("again").onclick=()=>show("pMenu");
 setLang("en");
